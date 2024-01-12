@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const multer = require("multer");
 const mongoose = require("mongoose");
+const path = require("path");
 
 const port = process.env.PORT;
 const app = express();
@@ -35,7 +36,7 @@ app.get("/", (req, res) => {
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "uploads");
+    cb(null, path.join(__dirname, "./uploads"));
   },
   filename: (req, file, cb) => {
     cb(null, `${Date.now()}_${file.originalname}`);
