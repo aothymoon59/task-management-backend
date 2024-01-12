@@ -11,7 +11,7 @@
 ### Get Files
 
 - Method: GET
-- Endpoint: /files/task/10
+- Endpoint: /files/task/:taskId
 
 ## Run this project locally-
 
