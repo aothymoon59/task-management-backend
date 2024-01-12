@@ -23,7 +23,7 @@ const fileSchema = new mongoose.Schema({
 const File = mongoose.model("File", fileSchema);
 
 const corsOptions = {
-  origin: "http://localhost:5173",
+  origin: "https://task-management59.netlify.app/",
   optionsSuccessStatus: 200,
 };
 
