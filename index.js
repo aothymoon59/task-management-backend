@@ -1,19 +1,17 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const multer = require("multer");
 const mongoose = require("mongoose");
 
-const port = 5000;
+const port = process.env.PORT;
 const app = express();
 
 // Connect to MongoDB using Mongoose
-mongoose.connect(
-  "mongodb+srv://task-manager:admin137866@cluster0.tgrk550.mongodb.net/task-manager?retryWrites=true&w=majority",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
-);
+mongoose.connect(process.env.DATABASE_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 const fileSchema = new mongoose.Schema({
   taskId: String,
